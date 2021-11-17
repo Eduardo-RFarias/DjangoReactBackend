@@ -31,7 +31,11 @@ SECRET_KEY = env(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(env('DEBUG', default=1))
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'django-react-testapp.herokuapp.com'
+]
 
 
 # Application definition
