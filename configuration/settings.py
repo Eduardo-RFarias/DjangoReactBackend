@@ -156,5 +156,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
-    HEROKU_URL
+    'https://' + HEROKU_URL
 ]
