@@ -32,6 +32,7 @@ SECRET_KEY = env(
 DEBUG = int(env('DEBUG', default=1))
 
 HEROKU_URL = 'django-react-testapp-backend.herokuapp.com'
+FRONTEND_HEROKU_URL = 'https://django-react-testapp.herokuapp.com'
 
 
 ALLOWED_HOSTS = [
@@ -156,5 +157,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
-    'https://' + HEROKU_URL
+    FRONTEND_HEROKU_URL
 ]
