@@ -31,7 +31,7 @@ SECRET_KEY = env(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(env('DEBUG', default=1))
 
-HEROKU_URL = 'django-react-testapp.herokuapp.com'
+HEROKU_URL = 'django-react-testapp-backend.herokuapp.com'
 
 
 ALLOWED_HOSTS = [
