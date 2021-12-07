@@ -6,17 +6,14 @@ from django.utils import timezone
 
 class TodoModelTests(TestCase):
     def test_create_todo(self):
-        '''
+        """
         Testing the creation of a new Todo
-        '''
+        """
 
-        name = 'Test todo'
-        description = 'This is an auto generated Todo'
+        name = "Test todo"
+        description = "This is an auto generated Todo"
 
-        todo = Todo.objects.create(
-            name=name,
-            description=description
-        )
+        todo = Todo.objects.create(name=name, description=description)
 
         self.assertGreater(todo.id, 0)
         self.assertEqual(todo.name, name)
