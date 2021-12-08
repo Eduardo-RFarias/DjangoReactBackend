@@ -25,7 +25,3 @@ The backend app of my Django React test App
   - run pipenv install command
   - select default interpreter as the backend virtual env
   - run one of two commands with VSCode debug panel
-
-# Bugs
-
-- By an unknown reason, Pytz is not being installed with djangorestframework
