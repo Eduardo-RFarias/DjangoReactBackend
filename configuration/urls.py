@@ -18,8 +18,14 @@ from django.urls import path, include
 from rest_framework import routers
 
 from apps.Todo.views import TodoView
+from apps.User.views import UserView
 
 router = routers.DefaultRouter()
 router.register(r"todo", TodoView)
+router.register(r"user", UserView)
 
-urlpatterns = [path("admin/", admin.site.urls), path("api/", include(router.urls))]
+urlpatterns = [
+    path(r"admin/", admin.site.urls),
+    path(r"auth/", include("apps.User.urls")),
+    path(r"api/", include(router.urls)),
+]

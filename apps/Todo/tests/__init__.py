@@ -1,1 +1,2 @@
 from .TodoModelTests import TodoModelTests
+from .BaseAuthenticatedTest import BaseAuthenticatedTest
