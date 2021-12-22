@@ -1,6 +1,5 @@
-from rest_framework.test import APITestCase
-
 from apps.User.models import User
+from rest_framework.test import APITestCase
 
 
 class BaseAuthenticatedTest(APITestCase):

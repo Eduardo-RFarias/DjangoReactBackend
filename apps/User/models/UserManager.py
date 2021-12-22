@@ -1,11 +1,10 @@
 from django.contrib.auth.models import BaseUserManager
-from ..validators import CpfValidator
 
 
 class UserManager(BaseUserManager):
-    def create_user(self, cpf, email, full_name=None, password=None):
+    def create_user(self, cpf, email, full_name, password=None):
         user = self.model(
-            cpf=self.normalize_cpf(cpf),
+            cpf=cpf,
             email=self.normalize_email(email),
             full_name=full_name,
         )
@@ -14,9 +13,9 @@ class UserManager(BaseUserManager):
         user.save()
         return user
 
-    def create_superuser(self, cpf, email, full_name=None, password=None):
+    def create_superuser(self, cpf, email, full_name, password=None):
         user = self.model(
-            cpf=self.normalize_cpf(cpf),
+            cpf=cpf,
             email=self.normalize_email(email),
             full_name=full_name,
             is_superuser=True,
@@ -25,6 +24,3 @@ class UserManager(BaseUserManager):
 
         user.save()
         return user
-
-    def normalize_cpf(self, cpf):
-        return CpfValidator(cpf).cpf

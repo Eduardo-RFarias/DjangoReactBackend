@@ -1,12 +1,12 @@
 from django.contrib.auth import get_user_model
-from django.contrib.auth.signals import user_logged_in
 from django.contrib.auth.hashers import check_password
+from django.contrib.auth.signals import user_logged_in
+from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from knox.models import AuthToken
 from knox.views import LoginView as KnoxLoginView
 from rest_framework import status
 from rest_framework.response import Response
-from django.shortcuts import get_object_or_404
 
 User = get_user_model()
 

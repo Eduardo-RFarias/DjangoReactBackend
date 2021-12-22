@@ -1,12 +1,21 @@
 from rest_framework import serializers
+
 from ..models import Todo
 
 
 class TodoSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Todo
-        fields = "__all__"
-        extra_kwargs = {"owner": {"read_only": True}}
+        fields = [
+            "url",
+            "id",
+            "name",
+            "description",
+            "done",
+            "created_at",
+            "owner",
+        ]
+        read_only_fields = ["owner"]
 
     def create(self, validated_data):
         user = self.context["request"].user
